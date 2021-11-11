@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.najed.najed.HomeFragment"
+        android:name="com.najed.najed.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/APIFragment"
-        android:name="com.najed.najed.APIFragment"
+        android:name="com.najed.najed.fragments.APIFragment"
         android:label="fragment_a_p_i"
         tools:layout="@layout/fragment_a_p_i" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/DBFragment"
-        android:name="com.najed.najed.DBFragment"
+        android:name="com.najed.najed.fragments.DBFragment"
         android:label="fragment_d_b"
         tools:layout="@layout/fragment_d_b" >
         <action

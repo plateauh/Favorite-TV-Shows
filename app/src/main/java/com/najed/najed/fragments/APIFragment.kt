@@ -1,4 +1,4 @@
-package com.najed.najed
+package com.najed.najed.fragments
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -14,6 +14,8 @@ import android.widget.*
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.najed.najed.MainActivityViewModel
+import com.najed.najed.R
 import com.najed.najed.adapters.SimpleAdapter
 import com.najed.najed.db.Show
 

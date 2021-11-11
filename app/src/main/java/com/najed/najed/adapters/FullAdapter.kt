@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.najed.najed.DBFragment
+import com.najed.najed.fragments.DBFragment
 import com.najed.najed.R
 import com.najed.najed.databinding.ShowFullItemBinding
 import com.najed.najed.db.Show

@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.najed.najed.APIFragment
+import com.najed.najed.fragments.APIFragment
 import com.najed.najed.api.Shows
 import com.najed.najed.databinding.ShowButtonItemBinding
 import com.najed.najed.db.Show

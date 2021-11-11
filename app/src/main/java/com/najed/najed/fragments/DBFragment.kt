@@ -1,4 +1,4 @@
-package com.najed.najed
+package com.najed.najed.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.najed.najed.MainActivityViewModel
+import com.najed.najed.R
 import com.najed.najed.adapters.FullAdapter
 import com.najed.najed.db.Show
 

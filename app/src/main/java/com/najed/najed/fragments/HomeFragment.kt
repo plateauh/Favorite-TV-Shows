@@ -1,4 +1,4 @@
-package com.najed.najed
+package com.najed.najed.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.Navigation
+import com.najed.najed.R
 
 
 class HomeFragment : Fragment() {
