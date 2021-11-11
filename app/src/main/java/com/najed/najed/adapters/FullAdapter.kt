@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.najed.najed.DBFragment
+import com.najed.najed.R
 import com.najed.najed.databinding.ShowFullItemBinding
 import com.najed.najed.db.Show
 
@@ -20,7 +21,6 @@ class FullAdapter(private val dbFragment: DBFragment): RecyclerView.Adapter<Full
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val notFoundImageURL = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"
         val show = showsList[position]
         holder.binding.apply {
             showNameTv.text = show.name
@@ -28,7 +28,7 @@ class FullAdapter(private val dbFragment: DBFragment): RecyclerView.Adapter<Full
             if (show.image != "no image found")
                 Glide.with(dbFragment).load(show.image).into(showIv)
             else
-                Glide.with(dbFragment).load(notFoundImageURL).into(showIv)
+                showIv.setImageResource(R.drawable.ic_baseline_no_photography_24)
 
             deleteBtn.setOnClickListener {
                 dbFragment.deleteShow(show)
