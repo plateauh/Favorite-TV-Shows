@@ -20,11 +20,15 @@ class FullAdapter(private val dbFragment: DBFragment): RecyclerView.Adapter<Full
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        val notFoundImageURL = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"
         val show = showsList[position]
         holder.binding.apply {
             showNameTv.text = show.name
             showLangTv.text = show.language
-            Glide.with(dbFragment).load(show.image).into(showIv)
+            if (show.image != "no image found")
+                Glide.with(dbFragment).load(show.image).into(showIv)
+            else
+                Glide.with(dbFragment).load(notFoundImageURL).into(showIv)
 
             deleteBtn.setOnClickListener {
                 dbFragment.deleteShow(show)

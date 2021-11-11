@@ -8,6 +8,7 @@ import com.najed.najed.APIFragment
 import com.najed.najed.api.Shows
 import com.najed.najed.databinding.ShowButtonItemBinding
 import com.najed.najed.db.Show
+import java.lang.Exception
 
 class SimpleAdapter(private val fragment: APIFragment):
     RecyclerView.Adapter<SimpleAdapter.ItemViewHolder>() {
@@ -25,7 +26,11 @@ class SimpleAdapter(private val fragment: APIFragment):
         holder.binding.apply {
             showBtn.text = show.name
             showBtn.setOnClickListener {
-                val showConverted = Show(0, show.name, show.language, show.summary, show.image.medium)
+                var showConverted = try {
+                    Show(0, show.name, show.language, show.summary, show.image.medium)
+                } catch (e: Exception) {
+                    Show(0, show.name, show.language, "no summary found", "no image found")
+                }
                 fragment.storeShow(showConverted)
                 Toast.makeText(fragment.context, "${show.name} added to the local database", Toast.LENGTH_SHORT).show()
             }
@@ -38,4 +43,5 @@ class SimpleAdapter(private val fragment: APIFragment):
         showsList = shows
         notifyDataSetChanged()
     }
+
 }

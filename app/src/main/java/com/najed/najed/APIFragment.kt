@@ -64,10 +64,12 @@ class APIFragment : Fragment() {
             override fun onResponse(call: Call<Shows?>, response: Response<Shows?>) {
                 val result = response.body()!!
                 showsAdapter.update(result)
+                if (result.isEmpty())
+                    Toast.makeText(this@APIFragment.context, "No result found", Toast.LENGTH_SHORT).show()
             }
 
             override fun onFailure(call: Call<Shows?>, t: Throwable) {
-                t.message?.let { Log.e("Fail getting data", it) }
+                call.cancel()
             }
         })
     }

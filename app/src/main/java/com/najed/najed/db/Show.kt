@@ -18,9 +18,9 @@ data class Show (
     val language: String,
 
     @ColumnInfo(name = "show_summary")
-    val summary: String,
+    val summary: String? = "no summary found",
 
     @ColumnInfo(name = "show_image")
-    val image: String
+    val image: String? = "no image found"
 
         )
