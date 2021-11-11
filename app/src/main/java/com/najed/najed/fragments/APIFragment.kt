@@ -54,6 +54,7 @@ class APIFragment : Fragment() {
             searchButton.setOnClickListener {
                 if (queryEditText.text.isNotEmpty()) {
                     viewModel.setDataFromAPI(queryEditText.text.toString())
+                    queryEditText.setText("")
                 }
                 else
                     Toast.makeText(apiView.context, "Please enter something", Toast.LENGTH_SHORT).show()
