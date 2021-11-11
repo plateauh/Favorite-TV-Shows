@@ -25,10 +25,10 @@ class FullAdapter(private val dbFragment: DBFragment): RecyclerView.Adapter<Full
         holder.binding.apply {
             showNameTv.text = show.name
             showLangTv.text = show.language
-            if (show.image != "no image found")
-                Glide.with(dbFragment).load(show.image).into(showIv)
-            else
+            if (show.image == "no image found")
                 showIv.setImageResource(R.drawable.ic_baseline_no_photography_24)
+            else
+                Glide.with(dbFragment).load(show.image).into(showIv)
 
             deleteBtn.setOnClickListener {
                 dbFragment.deleteShow(show)

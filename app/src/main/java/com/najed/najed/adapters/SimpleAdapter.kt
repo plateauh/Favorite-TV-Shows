@@ -10,8 +10,7 @@ import com.najed.najed.databinding.ShowButtonItemBinding
 import com.najed.najed.db.Show
 import java.lang.Exception
 
-class SimpleAdapter(private val fragment: APIFragment):
-    RecyclerView.Adapter<SimpleAdapter.ItemViewHolder>() {
+class SimpleAdapter(private val fragment: APIFragment): RecyclerView.Adapter<SimpleAdapter.ItemViewHolder>() {
 
     private var showsList = Shows()
 
