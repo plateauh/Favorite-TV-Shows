@@ -52,16 +52,6 @@ class MainActivityViewModel(app: Application): AndroidViewModel(app) {
         }
     }
 
-    fun getDataFromAPI(searchQuery: String): Shows {
-        val apiInterface = APIClient().getClient()?.create(APIInterface::class.java)
-        val call: Call<Shows?>? = apiInterface!!.getShows(searchQuery)
-        return try {
-            call?.execute()?.body()!!
-        } catch (e: Exception) {
-            Shows()
-        }
-    }
-
     fun setDataFromAPI(searchQuery: String) {
         CoroutineScope(IO).launch {
             val apiInterface = APIClient().getClient()?.create(APIInterface::class.java)
@@ -70,6 +60,7 @@ class MainActivityViewModel(app: Application): AndroidViewModel(app) {
                 apiData.postValue(call?.execute()?.body()!!)
             } catch (e: Exception) {
                 e.printStackTrace()
+                call?.cancel()
             }
         }
     }
