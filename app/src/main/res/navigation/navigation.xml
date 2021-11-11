@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.najed.najed.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_DBFragment"
+            app:destination="@id/DBFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_APIFragment"
+            app:destination="@id/APIFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/APIFragment"
+        android:name="com.najed.najed.APIFragment"
+        android:label="fragment_a_p_i"
+        tools:layout="@layout/fragment_a_p_i" >
+        <action
+            android:id="@+id/action_APIFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/DBFragment"
+        android:name="com.najed.najed.DBFragment"
+        android:label="fragment_d_b"
+        tools:layout="@layout/fragment_d_b" >
+        <action
+            android:id="@+id/action_DBFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
